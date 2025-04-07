@@ -17,6 +17,3 @@ This project is a web application built using Django framework for showcasing an
 ## Usage
 1. Access the application in your web browser at `http://localhost:8000`
 2. Draw on the canvas and submit an image.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
