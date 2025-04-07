@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Art Museum</title>
+    <script src="{% static 'web_gallery_app/js/canvas.js' %}" defer></script>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+
+        .gallery-img {
+            width: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Virtual Art Museum</h1>
+    <canvas id="artCanvas" width="400" height="400"></canvas><br>
+    <input type="text" id="title" placeholder="Title"><br>
+    <input type="text" id="author" placeholder="Your Name"><br>
+    <button onclick="submitArtwork()">Submit</button>
+    <button onclick="clearCanvas()">Clear</button>
+
+    <h2>Gallery</h2>
+    <div>
+        {% for artwork in artworks %}
+        <div>
+            <strong>{{ artwork.title }}</strong> by {{ artwork.author }}<br>
+            <img class="gallery-img" src="{{ artwork.image_data }}" alt="Artwork">
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
